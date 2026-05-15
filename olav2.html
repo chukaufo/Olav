@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLAV - Premium Catering Lagos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark: #0d1117;
+            --accent-blue: #00d4ff;
+            --accent-lime: #39ff14;
+            --white: #ffffff;
+            --gray-light: #f0f4f8;
+            --gray-dark: #1a1f2e;
+            --text: #1a1f2e;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Syne', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--dark);
+            color: var(--white);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-lime));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray-dark) 100%);
+            color: var(--white);
+            padding: 8rem 5%;
+            position: relative;
+            overflow: hidden;
+            min-height: 700px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(57, 255, 20, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-lime));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.85;
+            line-height: 1.8;
+            max-width: 500px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-blue);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-lime);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            color: var(--dark);
+        }
+
+        .hero-visual {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-visual-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(57, 255, 20, 0.1) 100%);
+            border: 2px solid var(--accent-blue);
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-visual-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(57, 255, 20, 0.1) 100%);
+            pointer-events: none;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding: 4rem 5%;
+            background: var(--gray-light);
+        }
+
+        .stat {
+            padding: 2rem;
+            background: white;
+            border-left: 4px solid var(--accent-blue);
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* Services */
+        .services {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-header h2 span {
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-lime));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2.5rem;
+            background: var(--gray-light);
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-lime));
+            width: 0;
+            transition: width 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-blue);
+            background: white;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        .service-card:hover::before {
+            width: 100%;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            padding: 6rem 5%;
+            background: var(--gray-light);
+        }
+
+        .portfolio-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .portfolio-title h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .portfolio-title h2 span {
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-lime));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(57, 255, 20, 0.1) 100%);
+            border: 2px solid var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(57, 255, 20, 0.2) 50%, transparent 70%);
+            transition: transform 0.4s ease;
+            transform: translate(0);
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-lime);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .portfolio-item:hover::before {
+            transform: translate(100px, 100px);
+        }
+
+        /* Menu */
+        .menu-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            padding: 2.5rem;
+            background: var(--gray-light);
+            border-left: 4px solid var(--accent-blue);
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            border-left-color: var(--accent-lime);
+            transform: translateX(8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .menu-item h4 {
+            color: var(--text);
+            font-family: 'Space Mono', monospace;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .menu-item p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            padding: 5rem;
+            background: var(--dark);
+            margin: 4rem 5%;
+            border: 2px solid var(--accent-blue);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(57, 255, 20, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        .cta-banner h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Contact */
+        .contact-section {
+            padding: 6rem 5%;
+            background: var(--gray-light);
+        }
+
+        .contact-section h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            padding: 2.5rem;
+            background: white;
+            border-top: 4px solid var(--accent-blue);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-top-color: var(--accent-lime);
+            transform: translateY(-4px);
+        }
+
+        .contact-item-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .contact-item-value {
+            font-size: 1rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            border-top: 2px solid var(--accent-blue);
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 4rem 5%;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 1.5rem;
+            }
+
+            header {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">◆ OLAV</div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#menus">Menus</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Culinary <span>Excellence</span> Redefined</h1>
+            <p>We transform your events into extraordinary experiences. Premium catering for those who demand perfection in every detail.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-visual-box">👨‍🍳</div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Events Executed</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">99%</div>
+            <div class="stat-label">Client Satisfaction</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">12+</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Team Members</div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our <span>Services</span></h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Corporate Events</h3>
+                <p>Professional catering for conferences, product launches, and business gatherings that elevate your brand.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💍</div>
+                <h3>Weddings & Celebrations</h3>
+                <p>Bespoke culinary experiences designed to make your most important moments absolutely unforgettable.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎊</div>
+                <h3>Private Functions</h3>
+                <p>Customized catering for intimate dinners to grand galas. We bring your vision to life flawlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-title">
+            <h2>Recent <span>Projects</span></h2>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">🥂</div>
+            <div class="portfolio-item">🍽️</div>
+            <div class="portfolio-item">🍷</div>
+            <div class="portfolio-item">🎂</div>
+            <div class="portfolio-item">🍗</div>
+            <div class="portfolio-item">✨</div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menus">
+        <div class="section-header">
+            <h2>Featured <span>Menus</span></h2>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h4>> EXECUTIVE</h4>
+                <p>Professional catering for corporate events. Multi-course service, professional staff, full bar service included.</p>
+            </div>
+            <div class="menu-item">
+                <h4>> CELEBRATION</h4>
+                <p>Wedding and celebration packages. Customized menus, premium ingredients, premium presentation options.</p>
+            </div>
+            <div class="menu-item">
+                <h4>> SIGNATURE</h4>
+                <p>Chef's special creations. Innovative dishes, artisan preparations, exclusive menu options for VIP clients.</p>
+            </div>
+            <div class="menu-item">
+                <h4>> BESPOKE</h4>
+                <p>Fully customized catering. Personal chef consultation, dietary accommodations, personalized service design.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <h2>Ready to Create Magic?</h2>
+        <p>Let's discuss your event and craft something extraordinary together</p>
+        <a href="#contact" class="cta-button">Schedule Consultation</a>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2>Connect With Us</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">hello@olavlagos.com</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-value">+234 (123) 456-7890</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-label">Location</div>
+                <div class="contact-item-value">Lagos, Nigeria</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-label">Availability</div>
+                <div class="contact-item-value">Weekdays & Weekends</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 OLAV CATERING. EXTRAORDINARY EXPERIENCES GUARANTEED.</p>
+    </footer>
+</body>
+</html>
