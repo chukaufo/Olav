@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OLAV - The Pinnacle of Catering</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>OLAV - Crystalline Luxury Catering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,11 +13,13 @@
         }
 
         :root {
-            --luxury-dark: #0f0f0f;
-            --luxury-gold: #b8934d;
-            --luxury-cream: #faf8f3;
-            --luxury-bronze: #8b7355;
-            --luxury-text: #2a2a2a;
+            --white: #ffffff;
+            --silver: #e8e8e8;
+            --platinum: #c0c0c0;
+            --charcoal: #1a1a1a;
+            --ice: #f0f8ff;
+            --crystal-blue: #b0e0e6;
+            --diamond: #f5f5f7;
         }
 
         html {
@@ -25,80 +27,66 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--luxury-text);
-            background: var(--luxury-cream);
+            font-family: 'Quicksand', sans-serif;
+            color: var(--charcoal);
+            background: var(--white);
             overflow-x: hidden;
-        }
-
-        /* Luxurious Background Pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(184, 147, 77, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(184, 147, 77, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
         }
 
         /* Header */
         header {
-            background: var(--luxury-dark);
-            color: var(--luxury-cream);
-            padding: 2.5rem 5%;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+            padding: 2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
-            background: rgba(15, 15, 15, 0.95);
-            border-bottom: 2px solid var(--luxury-gold);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border-bottom: 2px solid var(--platinum);
+            box-shadow: 0 2px 10px rgba(192, 192, 192, 0.2);
         }
 
         .logo {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 2.5rem;
-            letter-spacing: 6px;
-            color: var(--luxury-gold);
-            font-weight: 900;
-            text-transform: uppercase;
-            text-shadow: 0 4px 20px rgba(184, 147, 77, 0.2);
+            font-family: 'Prata', serif;
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            letter-spacing: 3px;
+            position: relative;
+        }
+
+        .logo::before {
+            content: '◇';
+            margin-right: 0.5rem;
+            color: var(--platinum);
+            font-size: 1.2rem;
         }
 
         nav {
             display: flex;
-            gap: 4rem;
+            gap: 3rem;
         }
 
         nav a {
-            color: var(--luxury-cream);
+            color: var(--charcoal);
             text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 2.5px;
-            transition: all 0.5s ease;
-            text-transform: uppercase;
+            font-size: 0.9rem;
             font-weight: 500;
+            transition: all 0.4s ease;
             position: relative;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         nav a::before {
             content: '';
             position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: -5px;
+            left: 0;
             width: 0;
             height: 2px;
-            background: var(--luxury-gold);
-            transition: width 0.5s ease;
+            background: linear-gradient(90deg, var(--platinum), var(--crystal-blue));
+            transition: width 0.4s ease;
         }
 
         nav a:hover::before {
@@ -106,108 +94,100 @@
         }
 
         nav a:hover {
-            color: var(--luxury-gold);
+            color: var(--platinum);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--luxury-dark) 0%, #1a1a1a 50%, var(--luxury-dark) 100%);
-            color: var(--luxury-cream);
-            padding: 15rem 5% 12rem;
-            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, var(--ice) 50%, #e6f2ff 100%);
+            padding: 8rem 5%;
             position: relative;
             overflow: hidden;
-            min-height: 800px;
+            min-height: 750px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
         }
 
         .hero::before {
-            content: '';
+            content: '◇';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--luxury-gold), transparent);
+            font-size: 200px;
+            top: -50px;
+            right: -50px;
+            color: rgba(192, 192, 192, 0.08);
+            pointer-events: none;
         }
 
         .hero::after {
-            content: '';
+            content: '◇';
             position: absolute;
-            width: 300px;
-            height: 300px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: radial-gradient(circle, rgba(184, 147, 77, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
+            font-size: 150px;
+            bottom: -30px;
+            left: 5%;
+            color: rgba(176, 224, 230, 0.08);
             pointer-events: none;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 1;
             max-width: 900px;
         }
 
         .hero h1 {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 6.5rem;
+            font-family: 'Prata', serif;
+            font-size: 5rem;
             margin-bottom: 1.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            animation: luxuryFadeIn 1.2s ease;
-            letter-spacing: 3px;
+            color: var(--charcoal);
+            letter-spacing: 2px;
             line-height: 1.1;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease;
         }
 
-        @keyframes luxuryFadeIn {
+        @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
-                filter: blur(10px);
+                transform: translateY(-30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
-                filter: blur(0);
             }
         }
 
-        .hero-line {
-            width: 80px;
+        .diamond-line {
+            width: 50px;
             height: 2px;
-            background: linear-gradient(90deg, transparent, var(--luxury-gold), transparent);
-            margin: 2rem auto;
-            animation: luxuryFadeIn 1.2s ease 0.2s both;
+            background: linear-gradient(90deg, transparent, var(--platinum), transparent);
+            margin: 1.5rem auto;
+            animation: fadeInDown 1s ease 0.2s both;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 3.5rem;
-            opacity: 0.85;
-            animation: luxuryFadeIn 1.2s ease 0.4s both;
-            letter-spacing: 1px;
-            font-weight: 300;
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            color: #555;
+            animation: fadeInDown 1s ease 0.3s both;
+            letter-spacing: 0.5px;
+            line-height: 1.8;
         }
 
         .cta-button {
             display: inline-block;
-            background: var(--luxury-gold);
-            color: var(--luxury-dark);
-            padding: 1.3rem 4rem;
+            background: var(--charcoal);
+            color: white;
+            padding: 1.1rem 3rem;
             text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 3px;
-            transition: all 0.6s ease;
-            border: 2px solid var(--luxury-gold);
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            border: 2px solid var(--charcoal);
             text-transform: uppercase;
             font-size: 0.75rem;
-            animation: luxuryFadeIn 1.2s ease 0.6s both;
+            animation: fadeInDown 1s ease 0.4s both;
             position: relative;
             overflow: hidden;
         }
@@ -219,8 +199,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: var(--luxury-dark);
-            transition: left 0.6s ease;
+            background: var(--platinum);
+            transition: left 0.4s ease;
             z-index: -1;
         }
 
@@ -229,267 +209,244 @@
         }
 
         .cta-button:hover {
-            color: var(--luxury-gold);
+            color: var(--charcoal);
         }
 
         /* Services */
         .services {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, var(--luxury-cream), white);
-            position: relative;
-        }
-
-        .services::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--luxury-gold), transparent);
+            gap: 2.5rem;
+            padding: 6rem 5%;
+            background: var(--white);
         }
 
         .service-card {
-            padding: 5rem 3rem;
-            text-align: center;
-            border-right: 1px solid rgba(184, 147, 77, 0.2);
-            border-bottom: 1px solid rgba(184, 147, 77, 0.2);
-            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--diamond) 100%);
+            border: 1px solid var(--silver);
+            transition: all 0.4s ease;
             position: relative;
-        }
-
-        .service-card:nth-child(3n) {
-            border-right: none;
-        }
-
-        .service-card:nth-child(n+3) {
-            border-bottom: none;
+            overflow: hidden;
         }
 
         .service-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 3px;
-            background: var(--luxury-gold);
-            transition: width 0.6s ease;
-        }
-
-        .service-card:hover::before {
-            width: 60px;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(176, 224, 230, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: all 0.4s ease;
         }
 
         .service-card:hover {
-            background: rgba(184, 147, 77, 0.05);
-            transform: translateY(-10px);
+            border-color: var(--platinum);
+            background: linear-gradient(135deg, var(--ice) 0%, var(--white) 100%);
+            box-shadow: 0 10px 40px rgba(192, 192, 192, 0.2);
+            transform: translateY(-8px);
         }
 
-        .service-card .icon {
-            font-size: 4rem;
+        .service-card:hover::before {
+            top: -20%;
+            right: -20%;
+        }
+
+        .service-icon {
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-            display: block;
-            transition: transform 0.6s ease;
-        }
-
-        .service-card:hover .icon {
-            transform: scale(1.15);
+            position: relative;
+            z-index: 1;
         }
 
         .service-card h3 {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 1.8rem;
-            letter-spacing: 2px;
+            font-family: 'Prata', serif;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
-            color: var(--luxury-dark);
-            font-weight: 700;
+            color: var(--charcoal);
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
         }
 
         .service-card p {
             color: #666;
             font-size: 0.95rem;
-            line-height: 1.9;
-            font-weight: 300;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
         }
 
         /* About */
         .about {
-            padding: 8rem 5%;
-            background: white;
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--ice) 0%, var(--white) 100%);
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            gap: 4rem;
             align-items: center;
-            border-top: 1px solid rgba(184, 147, 77, 0.2);
-            border-bottom: 1px solid rgba(184, 147, 77, 0.2);
         }
 
         .about h2 {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 4rem;
+            font-family: 'Prata', serif;
+            font-size: 3.5rem;
             margin-bottom: 2rem;
-            color: var(--luxury-dark);
-            font-weight: 900;
-            letter-spacing: 2px;
+            color: var(--charcoal);
+            letter-spacing: 1px;
         }
 
         .about p {
-            font-size: 1.05rem;
-            margin-bottom: 1.8rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             color: #555;
-            line-height: 2;
-            font-weight: 300;
+            line-height: 1.9;
         }
 
         .about-image {
-            background: linear-gradient(135deg, rgba(184, 147, 77, 0.1) 0%, rgba(139, 115, 85, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.1) 0%, rgba(176, 224, 230, 0.1) 100%);
             aspect-ratio: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 6rem;
-            border: 2px solid var(--luxury-gold);
+            font-size: 5rem;
+            border: 2px solid var(--platinum);
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '◇';
+            position: absolute;
+            font-size: 3rem;
+            color: var(--platinum);
+            top: 20px;
+            right: 20px;
         }
 
         /* Menu */
         .menu-section {
-            padding: 8rem 5%;
-            background: var(--luxury-dark);
+            padding: 6rem 5%;
+            background: var(--white);
         }
 
         .section-title {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 4.5rem;
+            font-family: 'Prata', serif;
+            font-size: 3.5rem;
             text-align: center;
-            margin-bottom: 4.5rem;
-            color: var(--luxury-gold);
-            font-weight: 900;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            margin-bottom: 4rem;
+            color: var(--charcoal);
+            letter-spacing: 2px;
         }
 
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            max-width: 1100px;
+            gap: 2.5rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .menu-item {
-            padding: 3rem;
-            background: linear-gradient(135deg, rgba(184, 147, 77, 0.1) 0%, rgba(139, 115, 85, 0.05) 100%);
-            border: 2px solid var(--luxury-gold);
-            transition: all 0.6s ease;
-            position: relative;
-        }
-
-        .menu-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at top right, rgba(184, 147, 77, 0.05) 0%, transparent 80%);
-            pointer-events: none;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, var(--diamond) 0%, var(--white) 100%);
+            border: 1px solid var(--silver);
+            border-top: 3px solid var(--platinum);
+            transition: all 0.4s ease;
         }
 
         .menu-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(184, 147, 77, 0.2);
+            border-color: var(--crystal-blue);
+            border-top-color: var(--crystal-blue);
+            box-shadow: 0 10px 30px rgba(176, 224, 230, 0.2);
+            transform: translateY(-5px);
         }
 
         .menu-item h4 {
-            color: var(--luxury-gold);
-            font-family: 'Bodoni Moda', serif;
-            font-size: 1.6rem;
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            font-family: 'Prata', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
         }
 
         .menu-item p {
-            color: var(--luxury-cream);
+            color: #777;
             font-size: 0.95rem;
-            line-height: 1.8;
-            font-weight: 300;
+            line-height: 1.7;
         }
 
         /* Contact */
         .contact-section {
-            padding: 8rem 5%;
-            background: linear-gradient(135deg, var(--luxury-dark) 0%, #1a1a1a 100%);
-            color: var(--luxury-cream);
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--white) 0%, var(--ice) 100%);
             text-align: center;
-            border-top: 2px solid var(--luxury-gold);
+            border-top: 2px solid var(--platinum);
         }
 
         .contact-section h2 {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 4rem;
+            font-family: 'Prata', serif;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-            letter-spacing: 3px;
-            color: var(--luxury-gold);
-            font-weight: 900;
+            color: var(--charcoal);
+            letter-spacing: 1px;
         }
 
-        .contact-section > p {
-            font-size: 1.1rem;
-            margin-bottom: 3.5rem;
-            opacity: 0.85;
-            letter-spacing: 1px;
+        .contact-section p {
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+            color: #555;
         }
 
         .contact-info {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-            max-width: 800px;
+            gap: 2rem;
+            max-width: 700px;
             margin: 0 auto;
         }
 
         .contact-item {
             padding: 2.5rem;
-            border: 2px solid var(--luxury-gold);
-            background: rgba(184, 147, 77, 0.05);
+            background: white;
+            border: 1px solid var(--silver);
             transition: all 0.4s ease;
         }
 
         .contact-item:hover {
-            background: rgba(184, 147, 77, 0.15);
+            border-color: var(--platinum);
+            box-shadow: 0 8px 20px rgba(192, 192, 192, 0.15);
         }
 
         .contact-item-label {
-            font-size: 0.75rem;
-            color: var(--luxury-gold);
-            letter-spacing: 3px;
+            font-family: 'Prata', serif;
+            font-size: 0.85rem;
+            color: var(--platinum);
             text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 1rem;
             font-weight: 600;
         }
 
         .contact-item-value {
-            font-size: 1.1rem;
-            color: var(--luxury-cream);
-            font-weight: 300;
+            font-size: 1rem;
+            color: var(--charcoal);
+            font-weight: 500;
         }
 
         /* Footer */
         footer {
-            background: #000;
-            color: var(--luxury-cream);
+            background: var(--charcoal);
+            color: var(--silver);
             padding: 3rem 5%;
             text-align: center;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            border-top: 1px solid var(--luxury-gold);
-            font-weight: 300;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border-top: 2px solid var(--platinum);
+        }
+
+        footer p {
+            opacity: 0.8;
         }
 
         @media (max-width: 768px) {
@@ -497,16 +454,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .service-card {
-                border-right: none;
-                border-bottom: 1px solid rgba(184, 147, 77, 0.2);
-            }
-
             .hero h1 {
-                font-size: 3rem;
-            }
-
-            .section-title {
                 font-size: 2.5rem;
             }
 
@@ -546,66 +494,66 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>The Pinnacle<br>Of Catering</h1>
-            <div class="hero-line"></div>
-            <p>Luxury experiences curated for those who accept nothing less than extraordinary</p>
-            <a href="#contact" class="cta-button">Begin Your Journey</a>
+            <h1>CRYSTALLINE<br>ELEGANCE</h1>
+            <div class="diamond-line"></div>
+            <p>Refined catering for the most discerning tastes. Where sophistication meets perfection.</p>
+            <a href="#contact" class="cta-button">Inquire Today</a>
         </div>
     </section>
 
     <section class="services" id="services">
         <div class="service-card">
-            <span class="icon">🍽️</span>
+            <div class="service-icon">🍽️</div>
             <h3>Corporate Excellence</h3>
-            <p>Transform business gatherings into memorable experiences that reflect your company's prestige and vision.</p>
+            <p>Elevate business gatherings with sophisticated culinary artistry and impeccable service.</p>
         </div>
         <div class="service-card">
-            <span class="icon">💍</span>
-            <h3>Celebrations of Love</h3>
-            <p>Your wedding deserves culinary artistry beyond compare. We craft unforgettable moments through exquisite dining.</p>
+            <div class="service-icon">💍</div>
+            <h3>Wedding Brilliance</h3>
+            <p>Your special day deserves refined dining experiences that create lasting memories.</p>
         </div>
         <div class="service-card">
-            <span class="icon">🎊</span>
-            <h3>Private Soirées</h3>
-            <p>From intimate dinners to grand celebrations, we deliver uncompromising excellence and impeccable service.</p>
+            <div class="service-icon">🎊</div>
+            <h3>Bespoke Celebrations</h3>
+            <p>From intimate dinners to grand affairs, we craft culinary perfection for every occasion.</p>
         </div>
     </section>
 
     <section class="about" id="about">
         <div>
             <h2>OLAV</h2>
-            <p>OLAV represents the zenith of luxury catering in Lagos. Every plate is a masterpiece. Every detail is perfection. Every moment is extraordinary.</p>
-            <p>We don't simply serve food—we craft culinary stories that captivate, inspire, and leave lasting impressions on your most important occasions.</p>
-            <p>Your celebration deserves nothing less than the absolute finest.</p>
+            <p>OLAV represents the pinnacle of refined catering in Lagos. We believe every event deserves extraordinary attention to detail and uncompromising excellence.</p>
+            <p>Our commitment to quality ingredients, innovative presentation, and flawless execution ensures your celebration becomes an unforgettable experience.</p>
+            <p>Experience the difference that true craftsmanship brings to your table.</p>
         </div>
         <div class="about-image">👨‍🍳</div>
     </section>
 
     <section class="menu-section" id="menus">
-        <h2 class="section-title">Premium Collections</h2>
+        <h2 class="section-title">Curated Collections</h2>
         <div class="menu-grid">
             <div class="menu-item">
-                <h4>Royal Elegance</h4>
-                <p>Caviar accompaniments • Wagyu selections • Truffle creations • Foie gras délicacies • Champagne service • Gold-finished presentations</p>
+                <h4>Crystalline Signature</h4>
+                <p>Refined multi-course experience. Premium ingredients, artistic plating, wine pairings curated by our sommelier.</p>
             </div>
             <div class="menu-item">
-                <h4>Epicurean Mastery</h4>
-                <p>Michelin-inspired courses • Molecular gastronomy • Artistic plating • Wine pairings • Chef's innovations • Multi-sensory experiences</p>
+                <h4>Platinum Service</h4>
+                <p>Elevated celebrations. Customized menus, premium selections, dedicated service staff, exclusive presentations.</p>
             </div>
             <div class="menu-item">
-                <h4>Soirée Sophistication</h4>
-                <p>Gourmet canapés • Artisan selections • Passed presentations • Interactive stations • Champagne selections • Luxury desserts</p>
+                <h4>Diamond Reception</h4>
+                <p>Sophisticated gatherings. Passed appetizers, interactive stations, champagne service, gourmet selections.</p>
             </div>
             <div class="menu-item">
-                <h4>Bespoke Creations</h4>
-                <p>Custom multi-course • Sommelier pairings • Dietary mastery • Personalized concepts • Exclusive ingredients • Private chef service</p>
+                <h4>Bespoke Creation</h4>
+                <p>Your vision realized. Custom multi-course menus, personal chef consultation, dietary excellence, personalized service.</p>
             </div>
         </div>
     </section>
 
     <section class="contact-section" id="contact">
-        <h2>Inquire About Your Event</h2>
-        <p>Connect with our culinary artisans to create your moment of perfection</p>
+        <h2>Begin Your Journey</h2>
+        <p>Let's create an exceptional culinary experience for your next event</p>
         <div class="contact-info">
             <div class="contact-item">
                 <div class="contact-item-label">Email</div>
@@ -621,13 +569,13 @@
             </div>
             <div class="contact-item">
                 <div class="contact-item-label">Availability</div>
-                <div class="contact-item-value">By Private Consultation</div>
+                <div class="contact-item-value">By Consultation</div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 OLAV. WHERE LUXURY BECOMES REALITY.</p>
+        <p>&copy; 2024 OLAV CATERING. CRYSTALLINE PERFECTION IN EVERY MOMENT.</p>
     </footer>
 </body>
 </html>
