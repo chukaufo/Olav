@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLAV - Luxury Catering Lagos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ffffff;
+            --secondary: #1a1a1a;
+            --accent: #a09080;
+            --text: #333333;
+            --light-gray: #f5f5f5;
+            --border: #e0ddd8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text);
+            background: var(--primary);
+            line-height: 1.9;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            letter-spacing: 3px;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 4rem;
+        }
+
+        nav a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            transition: color 0.4s ease;
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero */
+        .hero {
+            background: white;
+            padding: 12rem 5% 10rem;
+            text-align: center;
+            position: relative;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            letter-spacing: 2px;
+            font-weight: 700;
+            line-height: 1.1;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--accent);
+            margin: 2rem auto;
+            animation: fadeIn 1s ease 0.2s both;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: #666;
+            animation: fadeIn 1s ease 0.3s both;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            transition: all 0.4s ease;
+            border: 1px solid var(--secondary);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            animation: fadeIn 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            background: white;
+            color: var(--secondary);
+        }
+
+        /* Services */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            padding: 8rem 5%;
+            background: white;
+        }
+
+        .service-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            color: #777;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* About */
+        .about {
+            padding: 8rem 5%;
+            background: var(--light-gray);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .about p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 2;
+        }
+
+        .about-image {
+            background: white;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Menu */
+        .menu-section {
+            padding: 8rem 5%;
+            background: white;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--secondary);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            padding: 2.5rem;
+            background: var(--light-gray);
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .menu-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .menu-item h4 {
+            color: var(--secondary);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .menu-item p {
+            color: #777;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Contact */
+        .contact-section {
+            padding: 8rem 5%;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .contact-section > p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .contact-item-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .contact-item-value {
+            font-size: 1.05rem;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 2.5rem 5%;
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 2rem;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">OLAV</div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#menus">Menus</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>REFINED CATERING</h1>
+        <div class="hero-divider"></div>
+        <p>Exceptional culinary experiences crafted with precision and artistry for Lagos's most distinguished events</p>
+        <a href="#contact" class="cta-button">Inquire</a>
+    </section>
+
+    <section class="services" id="services">
+        <div class="service-card">
+            <span class="icon">🍽️</span>
+            <h3>Corporate Events</h3>
+            <p>Sophisticated gatherings that showcase your brand's excellence through impeccable cuisine and service.</p>
+        </div>
+        <div class="service-card">
+            <span class="icon">💍</span>
+            <h3>Weddings</h3>
+            <p>Your celebration deserves culinary artistry. We create unforgettable moments through exquisite dining.</p>
+        </div>
+        <div class="service-card">
+            <span class="icon">🎊</span>
+            <h3>Private Celebrations</h3>
+            <p>Intimate dinners to grand galas. We deliver sophistication and excellence at every service.</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div>
+            <h2>About OLAV</h2>
+            <p>OLAV represents the pinnacle of catering excellence in Lagos. With meticulous attention to detail and an unwavering commitment to quality, we transform every event into a culinary masterpiece.</p>
+            <p>Our philosophy is simple: exceptional food, flawless service, and genuine care for every guest. We don't just cater events—we create lasting memories.</p>
+            <p>Let us bring our refined expertise to your next celebration.</p>
+        </div>
+        <div class="about-image">👨‍🍳</div>
+    </section>
+
+    <section class="menu-section" id="menus">
+        <h2 class="section-title">Curated Selections</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h4>Classical Elegance</h4>
+                <p>Foie gras terrine • Perfectly aged beef • Truffle accompaniments • Seasonal vegetables • Chocolate sophistication</p>
+            </div>
+            <div class="menu-item">
+                <h4>Contemporary Refinement</h4>
+                <p>Innovative preparations • Premium proteins • Artistic plating • Unexpected flavors • Modern desserts</p>
+            </div>
+            <div class="menu-item">
+                <h4>Reception Excellence</h4>
+                <p>Artisan canapés • Curated selections • Interactive stations • Champagne service • Delicate sweets</p>
+            </div>
+            <div class="menu-item">
+                <h4>Bespoke Creations</h4>
+                <p>Custom menus • Wine pairings • Dietary excellence • Chef's innovations • Personalized service</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2>Connect With Us</h2>
+        <p>Begin planning your extraordinary event</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">hello@olavlagos.com</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-value">+234 (123) 456-7890</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-label">Location</div>
+                <div class="contact-item-value">Lagos, Nigeria</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-label">Availability</div>
+                <div class="contact-item-value">Year-Round Service</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 OLAV CATERING. REFINED EXCELLENCE IN EVERY EXPERIENCE.</p>
+    </footer>
+</body>
+</html>
